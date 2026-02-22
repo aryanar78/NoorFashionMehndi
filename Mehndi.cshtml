@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Mehndi";
+}
+<!-- LightGallery CSS -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css" />
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lg-thumbnail.min.css" />
+
+<section class="gallery-hero">
+
+    <h1>Our Gallery</h1>
+    <p>Beautiful Mehndi Designs</p>
+</section>
+
+<section id="lightgallery" class="gallery">
+    @for (int i = 1; i <= 7; i++)
+    {
+        <a href="@Url.Content($"~/mehendi/mehendi{i}.jpeg")">
+        <img src="@Url.Content($"~/mehendi/mehendi{i}.jpeg")"
+             alt="Mehendi @i"
+             loading="lazy" />
+        </a>
+    }
+</section>
+</div>
+<!-- LightGallery JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/lightgallery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/plugins/thumbnail/lg-thumbnail.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        lightGallery(document.getElementById("lightgallery"), {
+            plugins: [lgThumbnail],
+            thumbnail: true,
+            animateThumb: true,
+            showThumbByDefault: false,
+            speed: 400
+        });
+    });
+</script>
+
+
+
+
+

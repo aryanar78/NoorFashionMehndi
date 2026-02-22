@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noor Fashion & Mehndi</title>
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <!-- LEFT -->
+        <div class="nav-left">
+            <img src="~/images/logo.png" class="logo" alt="Noor Fashion Logo" />
+
+            <div class="brand-text">
+                <span class="brand">Noor Fashion & Mehndi</span>
+                <small>Where Fashion Meets Tradition</small>
+            </div>
+
+            <!-- NAV LINKS (important wrapper) -->
+            <div class="nav-links">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-controller="Home" asp-action="Gallery">Dresses</a>
+                <a asp-controller="Home" asp-action="Mehndi">Mehndi</a>
+                <a asp-controller="Home" asp-action="PriceChart">Price Chart</a>
+            </div>
+        </div>
+
+        <!-- HAMBURGER -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu-box" id="menuBox">
+            <div class="menu-header">
+                <span>Menu</span>
+                <span class="close-btn" onclick="toggleMenu()">x</span>
+            </div>
+            <a href="/">Home</a>
+            <a href="/Home/Gallery">Dresses</a>
+            <a href="/Home/Mehndi">Mehendi</a>
+            <a href="/Home/PriceChart">Price Chart</a>
+        </div>
+
+        <!-- RIGHT (SOCIAL ICONS) -->
+        <div class="nav-right">
+            <a href="https://instagram.com/mhendi_by_imroze_1107" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/919548553141" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:noorfashion@gmail.com" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+            </a>
+            <a href="tel:+919548553141" aria-label="Phone">
+                <i class="fa fa-phone"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+function toggleMenu() {
+    const menu = document.getElementById("menuBox");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+
+</script>
+
+</body>
+</html>
